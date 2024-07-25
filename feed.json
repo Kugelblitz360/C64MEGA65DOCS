@@ -1,0 +1,27 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "C64 for MEGA65 User Documentation",
+    "description": "",
+    "home_page_url": "https://kugelblitz360.github.io/C64MEGA65DOCS",
+    "feed_url": "https://kugelblitz360.github.io/C64MEGA65DOCS/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Boris Schneider-Johne"
+    },
+    "items": [
+        {
+            "id": "https://kugelblitz360.github.io/C64MEGA65DOCS/test.html",
+            "url": "https://kugelblitz360.github.io/C64MEGA65DOCS/test.html",
+            "title": "Test",
+            "summary": "1 2 3",
+            "content_html": "<p>1 2 3</p>",
+            "author": {
+                "name": "Boris Schneider-Johne"
+            },
+            "tags": [
+            ],
+            "date_published": "2024-07-25T15:29:14+02:00",
+            "date_modified": "2024-07-25T15:29:14+02:00"
+        }
+    ]
+}
