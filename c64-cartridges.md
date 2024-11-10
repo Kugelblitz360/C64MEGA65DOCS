@@ -245,15 +245,15 @@ With the clear exception of buttons not working fully on R3 machines (see above)
 
 * Action Replay
 * Epyx Fast Load
-* PowerCartridge
-* Super Snapshot
+* KCS Power Cartridge
+* Super Snapshot (including modern 128K variants aka "[SnappyROM](https://github.com/adrianglz64/snappyrom)")
 
 ### Untested Cartridges
 
 The following cartridges have not been tested and should be considered **NOT WORKING**.
 
-* **TeensyROM** - currently in testing but unexpected to fully work before the next Core version.
-* **Sidekick64** - currently in testing but unexpected to fully work before the next Core version.
+* **TeensyROM** - currently unsupported but expected to work with the next Core revision.
+* **Sidekick64** - currently unsupported but expected to work with the next Core revision.
 * **1541 Ultimate-II and variations** - _we expect these to not work_ due to the Kernal Replacement functions that are currently imcompatible with the 5.1 core as well as the REU functionality incompatible with the Core.
 * **GMod2** - we have not tested _flashing_ these cartridges including initial flash with the bootloader included when buying them empty in bulk but they SHOULD work.
 * **CMD RAM-Link, IEEE-488, Magic Voice, MMC64, IDE64** - these cartridges expand the C64 with further storage options or speech output and are currently not supported.
