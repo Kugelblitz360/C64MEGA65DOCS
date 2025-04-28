@@ -14,7 +14,7 @@
 }
 
 .ordered-list li::before {
-    color: #42a5f5;
+    color: #3A77D9;
     content: counter(listCounter, decimal-leading-zero) ".";
     font-weight: 600;
     left: -2rem;
@@ -26,11 +26,12 @@
 [type=button],
 [type=submit],
 button {
-    background: #42a5f5;
+    background: #3A77D9;
     border: none;
     border-radius: 2px;
     -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 1px rgba(0, 0, 0, 0.08);
     box-shadow: 0 4px 6px rgba(50, 50, 93, 0.1), 0 1px 1px rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
     color: #ffffff;
     cursor: pointer;
     display: inline-block;
@@ -62,26 +63,23 @@ button:hover {
 
 .btn--white {
     background: #ffffff !important;    
-    color: #696C7B !important;
+    color: #000 !important;
 }
 
 
 .btn--yellow {
-    background: #F6C144 !important;  
+    background: #F2C636 !important;  
     color: #ffffff !important;
 }
 
 .btn--green {
-    background: #69DA58 !important;    
+    background: #3EC02A !important;    
     color: #ffffff !important;
 }
 
-.btn--gray {
-    background: #F7FAFC!important;
-    color: #323c53!important;
+.btn--red {
+    background: #D82F2C !important;    
+    color: #ffffff !important;
 }
 
-.btn--dark {
-   background: #323c53!important;
-    color: #ffffff!important;
-}
+
