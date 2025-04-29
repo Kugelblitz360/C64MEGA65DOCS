@@ -17,7 +17,7 @@ One of the major annoyances of the C64 is that 80% of games control Player 1 by 
 The C64 Core has a very nice solution for this: You can just switch the ports virtually. Just use the `Flip Joystick Port` function in the [menu](the-main-menu.html#flip-joystick-ports) accessible with the <kbd>Help</kbd> key.
 
 ## Joysticks
-The Core supports two joysticks on the two DE-9 ports. As there is no user port on the Mega65, there is no support for any of the 4-joystick hardware mods that are floating around.
+The Core supports two joysticks on the two DE-9 ports. As there is no user port on the MEGA65, there is no support for any of the 4-joystick hardware mods that are floating around.
 
 The Core supports all logic for 2, 3 and 5 button **C64 compatible** joysticks because these only use standard C64 functions.
 
@@ -37,8 +37,15 @@ https://github.com/willyvmm/mouSTer
 
 https://github.com/ricardoquesada/unijoysticle2
 
+### ArcadeR
+The ArcadeR joystick will work with the MEGA65 out of the box, but only as a one button joystick. To enable the second button, you need to **open** the ArcadeR and move one jumper from the ``Atari`` to the ``C64`` position. The two switches on the upper side then work as follows: The left switch turns auto-fire for the standard fire button (left) on or off. The right switch sets up the right fire button either as Button #2 or Button #3. Please check the manual that is delivered with the ArcadeR for more details.
+
 ## Paddles
-Standard DE-9 paddles are fully supported. Two paddles only need one port, so you can connect two pairs of two paddle, i.e. four paddles. These include original Commodore paddles and Atari CX30 paddles (for 2600 and/or Atari 400). Please be reminded that those paddles are pretty ancient analog technology that is not very precise. If you have control troubles while using a paddle, it is not a bad implementation inside the Core, but either in the game itself or the paddle simply has gone bad over the years. Current rereleased Atari CX30 paddles from 2023 for the recent Atari console rebuilds are getting very good reviews from users. Four games that have great paddle control are ``Omega Race (Commodore)``, ``Sea Wolf (Commodore)``, ``Arkanoid (Ocean)`` and for four players the modern ``Space Lords (RGCD)``.
+Standard DE-9 paddles are fully supported. Two paddles only need one port, so you can connect two pairs of two paddle, i.e. four paddles. These include original Commodore paddles and Atari CX30 paddles (for 2600 and/or Atari 400). Please be reminded that original paddles are pretty ancient analog technology that is not very precise. If you have control troubles while using a paddle, it is not a bad implementation inside the Core, but either in the game itself or the paddle simply has gone bad over the years. 
+
+Current rereleased Atari CX30 paddles from 2023 for the recent Atari console rebuilds work well, **but the C64 can only utilize about a third of the paddle motion.** The leftmost 2/3rds will not give any results, if you then turn the paddle a bit more to the right, you will get the full control, just compressed to part of the turning range. Inside that third of the range the control is very precise, so we consider the paddles working.
+
+Four games that have great paddle control are ``Omega Race (Commodore)``, ``Sea Wolf (Commodore)``, ``Arkanoid (Ocean)`` and for four players the modern ``Space Lords (RGCD)``.
 
 ## Mice
 Only the Commodore 1350 type and 1351 type mice are supported. Amiga and Atari ST mice use a totally different way of communication on the DE-9 port and as the Core does not translate signals at all, no software on the C64 can use it. This is tricky because the MEGA65 in MEGA65 mode supports Amiga-style mouse control. **When you leave an Amiga-style mouse plugged in, it can render the keyboard unresponsive in the C64 Core.**

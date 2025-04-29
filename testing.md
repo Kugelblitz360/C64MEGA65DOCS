@@ -10,7 +10,7 @@ https://github.com/MJoergen/C64MEGA65/blob/master/tests/demos.md
 
 These tests show the extreme compatibility of the C64 Core.
 
-Unfortunately this rigorous testing needs to be fully redone for the next version of the Core, and as this will take many **weeks** of work, it won't be done again soon but at the planned release of an updated core in approximately late 2025. (We are testing additional hardware like TeensyROM and Sidekick64 and also will add newer top demos to the testing regimen).
+Unfortunately this rigorous testing needs to be fully redone for the next version of the Core, and as this will take many **weeks** of work, it won't be done again soon. Because of this and other time-limitations, please do not expect a Core release higher than 5.2 in 2025.
 
 If you find a piece of C64 software that does run on a PAL Commodore 64 but not on the C64 core, please be so kind to raise an issue at the Github so that this information is preserved and not lost in any of the online forums.
 

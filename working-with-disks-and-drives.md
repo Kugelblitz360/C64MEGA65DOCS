@@ -56,10 +56,13 @@ Additional extensions with extra cables (e.g. DolphinDOS) are not supported.
 
 The drive LED of the MEGA65 will not light up when using external drives.
 
-Please make sure that you do not mount a ``.d64`` image when you have a device with the #8 on the IEC bus.
+Please make sure that you do not mount a `.d64` image when you have a device with the #8 on the IEC bus.
+
+Also please make sure that the menu option **IEC: Use Hardware Port** is turned on as mentioned [here](the-main-menu.html#iec-use-hardware-port). When the hardware port is turned off, obviously external drives can not be seen.
 
 ### Ultimate 1541
 The different versions of the Ultimate 1541 connect to both the IEC bus and the Extension Port as a cartridge for their functionality. As the cartridge part is not fully supported, you also can not use an Ultimate 1541 with the Core yet.
+*It has been reported that you can use the 1541-emulation by not inserting the cartridge itself, power the U-II by USB, connect with an IEC cable and then use a computer with Telnet to remote control the U-II via Ethernet. Please refer to the 1541 Ultimate-II documentation for details.*
 
 ### SD2IEC and Pi1541
 These modern solid-state replacements for 1541 drives are wide-spread and, in theory, fully supported. The hardware design for these devices is open source and the software can be downloaded free of charge. This has lead to many different small vendors building devices based on these designs.

@@ -2,6 +2,15 @@
 
 A majority of C64 cartridges works with the C64 Core on MEGA65 - both as physical hardware as well as software-mounted images. Some very specific cartridge tricks do not work, like the Kernal Replacement function developed by **skoe** for the EasyFlash 3 and also used in other cartridges. Details about specific cartridges can be found below.
 
+[Easyflash 3 special instructions](#easyflash-3)
+
+[KungFuFlash special instructions](#kung-fu-flash)
+
+[Final Cartridge III special instructions](#final-cartridge-iii)
+
+[TeensyROM special instructions](#teensyrom)
+
+
 The MEGA65 will autostart the C64 core when a C64 cartridge is inserted before turning on the MEGA65. This behaviour can be turned off. Please check the MEGA65 documentation for this as it is not a function of the C64 core.
 
 ## Important safety tips
@@ -22,11 +31,11 @@ Two sources for cartridge cases are:
 
 The 2024 revision (R6) of the MEGA65 is fully compatbile with the C64 hardware specification, as it features bi-directional signals for RESET, IRQ and NMI. Machines built before 2024 (R3) do not have bi-directional RESET which unfortunately makes some freezer cartridges as well as the RESET function of KungFuFlash incompatible.
 
-The 5.1 version of the C64 core does not yet support bi-directional IRQ/NMI. Due to this, some specific cartridges as well as the Kernal Replacement function of the EasyFlash 3 cartridge do not work yet.
+The 5.2 version of the C64 core does not yet support bi-directional IRQ/NMI. Due to this, some specific cartridges as well as the Kernal Replacement function of the EasyFlash 3 cartridge do not work yet.
 
 Learn more about [different MEGA65 revisions here](installation.html#differences-between-mega65-revisions).
 
-### CORE #0 update for older MEGA65
+#### CORE #0 update for older MEGA65
 If your MEGA65 was built before 2024 and you did not update the system software, then you very likely need to update your so-called CORE #0. This is the MEGA65 core that decides which core is supposed to run when a cartridge is inserted. The original CORE #0 crashed when so-called "Ultimax mode" cartridges were inserted and therefore a lot of the games, utility cartridges and flash cartridges cannot be started when this old CORE #0 is installed.
 
 If you see such crashes, [update CORE #0 as described here](https://mega65.atlassian.net/l/cp/1fkp5zvQ).
@@ -39,30 +48,32 @@ Why would you actually want a physical cartridge when the Core allows to "mount"
 3. To save data
 4. To use Freezer Functions
 
-### Support Developers and Publishers
+#### Support Developers and Publishers
 
 Over 40 years after its release, companies like [Protovision](https://www.protovision.games) and
 [RGCD](https://rgcd.bigcartel.com/products) are still producing new games as commercial software. Buy as many original hardware cartridges from them as you can  afford. The Commodore 64 community needs to stay alive.
 
 But sometimes the cartridges are just sold out or a friendly soul has released a new game in cartridge format that you can download on itch.io. You do not need to burn an EPROM or flash a cartridge, but can mount those `.crt` files in the Core.
 
-### Compatibility issues
+#### Compatibility issues
 
 The current implementation of the Core uses the MEGA65 HyperRAM to store the visible bank of ROM data when you use a `.crt` file. So there is a very small time delay when a bank switch occurs because we need to halt the C64 for a very short time while loading the new bank data into HyperRAM. On real hardware cartridges, this switch is instantaneous. While during testing we have not found any cartridge that has serious issues with that small delay, there always is the chance that you see a glitch or any other side effect.
 
-### Save Data
+#### Save Data
 
 Some cartridge types (EasyFlash 1&3, GMod 2) allow to write data back to the cartridge. This is not supported by mounted `.crt` files. In other words: If you save your game on a mounted software cartridge it is lost as soon as you reset because this will not be saved to the SD card. On real physical cartridges save is supported.
 
-### Freezer cartridges
+#### Freezer cartridges
 
-The MEGA65 core has no internal freezer functionality (especially because it can not create new files) but also has **very limited support** for virtual cartridge buttons either. Basically, the <kbd>Restore</kbd> key can be used with SOME freezers. During testing we only had limited success with the Final Cartridge III loaded as a `.crt` file.
+The MEGA65 core has no internal freezer functionality (especially because it can not create new files) but also has **very limited support** for virtual cartridge buttons either. Basically, the <kbd>Restore</kbd> key can be used with SOME freezers. During testing we only had success with the Final Cartridge III loaded as a `.crt` file.
 
 Physical freezer cartridges do work, but we recommend also using an external drive (or SD2IEC or similar), because the Core can not create new files on your SD card so if you do not have a mountable disk to save to, your freeze can not be saved.
 
 ## Specific *physical* cartridge compatibility
 
 This section is specific to hardware cartridges that you insert into the cartridge slot. For compatibility when mounted as a `.crt` file from an SD-Card, please see the next major section.
+
+If you have an older MEGA65 and run into issues with some physical cartridges that are described as working below, please check whether your need to update Core #0. Instructions can be found [here](installation.html#issues-with-cartridge-compatibility).
 
 ### C64GS Cartridges
 Cartridges produced for the C64GS console work, but some cartridges as a copy protection require the Kernal to be set to "Games System", otherwise they will just show a black screen. This would happen on a real C64 too. You can switch the Kernel in the main menu as described [here](the-main-menu.html#kernal-standard).
@@ -174,9 +185,11 @@ Thomas "skoe" Giesel found a clever hardware hack that allows a cartridge to rep
 
 On the R3 machine it is technically impossible to replicate this timing. To make sure you do not damage anything, Kernal Mode on EF3 is disabled.
 
-While the technical limitation on the R6 machines (2024+) has been removed, the 5.1 version of the Core does not support the timing yet. We are planning this as a feature for later versions and until then, Kernal Mode on EF3 is not working. If you select a Kernal, the Core will boot the Kernal set in the Core menu instead and NOT the one on the EF3.
+While the technical limitation on the R6 machines (2024+) has been removed, the 5.2 version of the Core does not support the timing yet. We are planning this as a feature for later versions and until then, Kernal Mode on EF3 is not working. If you select a Kernal, the Core will boot the Kernal set in the Core menu instead and NOT the one on the EF3.
 
 ### Kung Fu Flash
+
+***Please scroll down for KFF2 instructions!***
 
 [Kung Fu Flash](https://github.com/KimJorgensen/KungFuFlash) (short: KFF) can emulate different cartridge types in `.crt`-format , load `.prg` files and use `.d64` disk images. Just place your desired files on a FAT formatted microSD card for the KFF and use the built-in launcher to execute them.
 
@@ -204,26 +217,58 @@ cartridge inserted into the Expansion Port.
 
 #### Freezer Cartridges on Kung Fu Flash
 
-**If you have a Pre-2024 (R3) MEGA65, Freezer Cartridges will not work at all**
+**If you have a Pre-2024 (R3) MEGA65, Freezer Cartridges will not work at all!**
 
 On the R6 board, we have tested some freezer cartridges and most will work. Please be advised that in order to SAVE a freeze, you need either a mounted empty `.d64` image or a physical drive. The C64 Core can not create new images for you, it can only work with what is already on the SD-Card.
 
+#### Kung Fu Flash 2
+
+There is a newer version of the KFF cartridge design that is clearly marked as **"experimental"** by the creator, Kim Jorgenson. Still some resellers have decided to sell KFF2 instead of the original KFF. We currently do recommend to stay with the original KFF which is tried and tested.
+
+If you happen to have a KFF2, please note the following:
+
+* The REU emulation is not supported. The KFF2 will boot and run .crt files even if you have turned on REU in the F5 options, but booting to BASIC, `.prg` or `.d64` will most like run into errors and crashes. Please turn off REU when using KFF2 with a MEGA65.
+* The Reset function does not work when a `.crt` file is active. Any Reset, including Power Cycling, will only lead to a wild flickering LED on the KFF2. You can press the <kbd>MENU</kbd> button to get back to the menu and continue working.
+
 ### Final Cartridge III
 
-When you insert a Final Cartridge III (short: FCIII) into the MEGA65's Expansion Port and switch-on the machine then you will encounter one of two situations instead of being greeted with the FCIII's main menu:
+With the latest version of the Core (5.2), a physical Final Cartridge III should work fully on MEGA65 **R6** revisions. If you see any strange behaviour, please check that you are not using Core 5.1 or earlier.
+
+For the older R3 revision you unfortunately need to do some extra work. When you insert the Final Cartridge III into the MEGA65's Expansion Port and switch-on the machine, you will encounter one of two situations instead of beeing greeted with the FCIII's main menu:
 
 * You will land in BASIC
-* You will see a "blue screen", i.e. the standard C64 background and frame color, but without anything readable or garbage on it
+* You will see a "blue screen", i.e. the standard C64 background and frame color but without anything readable or garbage on it
 
 To start the Final Cartridge you need to perform the following three workaround steps one or multiple times in a row:
 
-1. Press the <kbd>Reset</kbd> button of the FCIII
-2. Wait one second
-3. Press the <kbd>Reset</kbd> button of the MEGA65
+* Press the Reset button of the FCIII
+* Wait one second
+* Press the Reset button of the MEGA65
 
-After the FCIII started properly, mostly everything works fine, including the fast loader and the <kbd>Freezer</kbd> button (at least most of the time).
+As soon as the FCIII started properly, mostly everything works fine, including the fast loader and the Freezer button (at least most of the time). 
 
 Please note that the Final Cartridge III monitor does NOT let you jump back into a running program. This has been reported as a bug, but it actually is a technical limitation of FCIII. When you enter the monitor from the freezer, no version of Final Cartridge III on any hardware allows jumping back into the game. When you exit the monitor, you will get to "READY." instead.
+
+### TeensyROM
+
+TeensyROM is a powerful cartridge that combines fast loading of `.prg` files, `.crt` emulation as well as special SID-MIDI capabilities and a network port. Coupled with an RFID-Reader it features a very nice instant load functionality seen here: https://www.youtube.com/watch?v=FqgyiQdGp7o.
+
+Find out more at https://github.com/SensoriumEmbedded/TeensyROM
+
+With older firmware TeensyROM will not run with the C64 core but actually DOES partially run in MEGA65-mode when you type `GO64`. TeensyROM creator Sensorium has updated firmware starting with version **0.6.4** (released in January 2025) to make TeensyROM compatible with the C64 core. This firmware is available here: 
+
+https://github.com/SensoriumEmbedded/TeensyROM/tree/main/bin/TeensyROM
+
+To install this firmware with only a MEGA65 you can to follow these steps:
+* Put the .hex file on a Micro SD card and insert into the TeensyROM.
+* Power on the MEGA65 and start the MEGA65 core, **NOT the C64 core.**
+* Type 'GO64' if TeensyROM does not automatically start.
+* Press F3 and select the `TeensyROM.0.6.4_full.hex` file (or a later version).
+* Flashing takes about two minutes and, in this configuration, will just stop the machine. When there are no flashing characters in the upper right corner, you can safely power off the MEGA65.
+* Power it back on, start the C64 core, turn on "Use Hardware Slot" if needed.
+* When TeensyROM is active, check that the flash has worked by pressing <kbd>Shift</kbd> and <kbd>F7</kbd> and then <kbd>k</kbd> to run a self-test.
+
+TeensyROM disables itself when it has started a `.prg` or `.crt` file and will not reappear when you use the Reset-Button on the MEGA65. To reactivate, use the button on the TeensyROM cartridge. **It can take about two seconds for the TeensyROM menu to show up** - this is normal behaviour as the TeensyROM reinitialises itself, then resets the C64.
 
 ### GeoRAM
 
@@ -233,6 +278,7 @@ GeoRAM cartridges work. Make sure that you use a GEOS boot disk with support for
 * [www.lyonlabs.org](https://www.lyonlabs.org/commodore/onrequest/geos/index.html)
 
 ### REU 1700, 1764, 1750
+
 You can not use physical REU cartridges with the Core on the MEGA65.
 
 You can activate a virtual REU 1750 in the menu. This deactivates the physical cartridge slot and the simulated cartride, so the virtual REU 1750 can not be combined with any other cartridge.
@@ -247,17 +293,24 @@ With the clear exception of buttons not working fully on R3 machines (see above)
 * Epyx Fast Load
 * KCS Power Cartridge
 * Super Snapshot (including modern 128K variants aka "[SnappyROM](https://github.com/adrianglz64/snappyrom)")
+* GMod2-based cartridges (some commercial games) - we have not tested flashing these cartridges including initial flash when empty, but they should work.
+* Swiftlink and similar cartridges (according to several users, not tested by the author of the doc).
 
-### Untested Cartridges
+## UNSUPPORTED PHYSICAL CARTRIDGES
 
 The following cartridges have not been tested and should be considered **NOT WORKING**.
 
-* **TeensyROM** - currently unsupported but expected to work with the next Core revision.
-* **Sidekick64** - currently unsupported but expected to work with the next Core revision.
-* **1541 Ultimate-II and variations** - _we expect these to not work_ due to the Kernal Replacement functions that are currently imcompatible with the 5.1 core as well as the REU functionality incompatible with the Core.
-* **GMod2** - we have not tested _flashing_ these cartridges including initial flash with the bootloader included when buying them empty in bulk but they SHOULD work.
-* **CMD RAM-Link, IEEE-488, Magic Voice, MMC64, IDE64** - these cartridges expand the C64 with further storage options or speech output and are currently not supported.
+* **Sidekick64** - currently unsupported but expected to work with the next Core revision. (Uses the DMA-line to halt the CPU during Init, which is not yet implemented).
+
+* **Chat64** - there are reports that this cartridige once supposedly has worked with a beta version of the Core, but not with any of the release versions, especially the current 5.2 release. The dev team currently has no such cartridge and can not troubleshoot.
+
+* **1541 Ultimate-II and variations** - these do not work due to the Kernal Replacement functions that are currently imcompatible with the 5.1 Core, and both the DMA-line and the REU functionality incompatible with the 5.1 Core.
+*It has been reported that you can use the 1541-emulation by not inserting the cartridge itself, power the U-II by USB, connect with an IEC cable and then use a computer with Telnet to remote control the U-II via Ethernet. Please refer to the 1541 Ultimate-II documentation for details.*
+
+* **CMD RAM-Link, IEEE-488, Magic Voice, MMC64, IDE64** - these cartridges expand the C64 with further storage options or speech output and are currently not supported. For IDE64 a fix should be coming in the next Core version (no release date yet), others that use DMA functions might take even longer.
+
 * **Expert Cartridge** - this freezer is untested and unsupported.
+
 * **ISEPIC** - this freezer is untested and unsupported.
 
 
@@ -266,8 +319,7 @@ The following cartridges have not been tested and should be considered **NOT WOR
 The Core allows to load a large number of C64 cartridges as a virtual cartridge. You need to supply a valid `.crt` file in VICE 3.X format for correct identification and use. Most ROM-files, including games created for the C64GS will work. Here are specific compatibility problems.
 
 ### C64GS Cartridges
-Cartridges produced for the C64GS console work, but some cartridges as a copy protection require the Kernal to be set to "Games System", otherwise they will just show a black screen. This would happen on a real C64 too. You can switch the Kernel in the main menu as described [here](the-main-menu.html#kernal-standard).
-
+Cartridges produced for the C64GS console work, but some cartridges as a copy protection require the Kernal to be set to `Games System`, otherwise they will just show a black screen. This would happen on a real C64 too. You can switch the Kernel in the main menu as described [here](the-main-menu.html#kernal-standard).
 
 ### Easyflash 1
 Cartridges in Easyflash 1 format can be mounted and used. _Please remember that any changes to the cartridge are not written back to the SD Card._ You will lose Game Saves unless there is a feature to export saved games to a disk. Also, you can not flash a mounted Easyflash 1 card with EasyProg.
@@ -291,7 +343,7 @@ You can activate a virtual REU 1750 in the menu. This turns off the physical car
 
 ### VICE Cartridge types supported
 The following list shows the currently implemented cartridge types as per VICE specification:
-https://vice-emu.sourceforge.io/vice_6.html#SEC161
+https://vice-emu.sourceforge.io/vice_7.html#SEC161
 
 **Any cartridge type NOT in this list is NOT supported.**
 
@@ -303,12 +355,17 @@ https://vice-emu.sourceforge.io/vice_6.html#SEC161
 |0|CRT (see subtypes above)|
 |1|Action Replay V5 (see remarks above)|
 |3|The Final Cartridge III|
+|4|Simons' BASIC|
 |5|Ocean|
 |7|Fun Play|
 |8|Super Games|
 |15|C64 Games System|
 |17|Dinamic|
 |19|Magic Desk|
+|21|Comal 80|
+|22|Structured Basic|
+|28|Mikro Assembler|
 |32|EasyFlash (Read only)|
 |60|GMod2 (Read only)|
+|83|BMP-Data Turbo 2000|
 

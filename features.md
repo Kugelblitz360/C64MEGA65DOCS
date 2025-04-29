@@ -7,9 +7,9 @@ This core is based on the [MiSTer](https://github.com/MiSTer-devel/C64_MiSTer) C
 The core uses the [MiSTer2MEGA65](https://github.com/sy2002/MiSTer2MEGA65)
 framework and [QNICE-FPGA](https://github.com/sy2002/QNICE-FPGA) for FAT32 support (loading ROMs, mounting disks) and for the on-screen-menu.
 
-## Current Version (5.1)
+## Current Version (5.2)
 
-With our [Release 5.1](https://github.com/MJoergen/C64MEGA65/blob/master/VERSIONS.md), we are aiming for a complete **retro C64 PAL experience**: The core turns your MEGA65 into a Commodore 64 with a 1541 disk drive (you can mount `.d64` images from your SD Card). It also supports the following hardware ports of the MEGA65:
+With our [Release 5.2](https://github.com/MJoergen/C64MEGA65/blob/master/VERSIONS.md), we are aiming for a complete **retro C64 PAL experience**: The core turns your MEGA65 into a Commodore 64 with a 1541 disk drive (you can mount `.d64` images from your SD Card). It also supports the following hardware ports of the MEGA65:
 
 * Both Joystick ports for joysticks, mice and paddles
 * Expansion port for C64 cartridges: Most physical Games, freezers, fast loader cartridges, GeoRAM, multi-function flash cartridges, work directly.
@@ -38,7 +38,7 @@ Our philosophy on the MEGA65's outputs is that VGA is the "pure" retro-output (a
 
 The core at default outputs 1280×720 pixels (720p) at 50 Hz and HDMI audio at a sampling rate of 48 kHz by default. This is supported by a vast majority of monitors and TVs. The 4:3 aspect ratio of the C64's output is preserved during upscaling, so that even though 720p is a 16:9 picture, the C64 looks pixel perfect and authentic on HDMI.
 
-There are many options to optimize the HDMI-Display for your specific monitor, please see details on the [HDMI](vga-and-hdmi-output.html#hdmi-modes) page.
+There are many options to optimize the HDMI-Display for your specific monitor, please see details on the [HDMI](hdmi-and-analog-output.html#hdmi-modes) page.
 
 If you use a 4:3 or 5:4 display via HDMI then use the option "HDMI: 4:3 50 Hz" or HDMI: 5:4 50 Hz" respectively to activate "PAL over HDMI"; the core will output 720x576 pixels (576p) at 50 Hz.
 
@@ -46,7 +46,7 @@ If you use a 4:3 or 5:4 display via HDMI then use the option "HDMI: 4:3 50 Hz" o
 
 For a true retro feeling, we are providing a 4:3 image via the MEGA65's VGA port, so that you can connect real CRT monitors or older 4:3 LCD/TFT displays. The resolution is 720x576 pixels and the frequency is 50.125 Hz in PAL mode. If your monitor supports this, you will experience silky smooth scrolling without any flickering and tearing.
 
-Retro 15 kHz RGB over VGA: This is for the ultimate retro experience: Connect an old SCART TV or an old RGB-capable monitor to MEGA65's VGA port. The core supports composite sync (CSYNC) so that SCART and other retro devices work flawlessly. Learn more in the dedicated documentation about [using analog retro cathode ray tubes](vga-and-hdmi-output.html#retro-15-khz-for-cathode-ray-tubes).
+Retro 15 kHz RGB over VGA: This is for the ultimate retro experience: Connect an old SCART TV or an old RGB-capable monitor to MEGA65's VGA port. The core supports composite sync (CSYNC) so that SCART and other retro devices work flawlessly. Learn more in the dedicated documentation about [using analog retro cathode ray tubes](hdmi-and-analog-output#retro-15-khz-for-cathode-ray-tubes).
   
 ## Convenience features
 
@@ -64,23 +64,23 @@ Retro 15 kHz RGB over VGA: This is for the ultimate retro experience: Connect an
 
 ## Constraints and missing features
 
-Our Release 5.1 is a mature release. Thanks to all the folks who [contributed](https://github.com/MJoergen/C64MEGA65/blob/master/AUTHORS) to the Core, it is incredibly compatible to an original PAL Commodore 64. With our Release 5.1 you can play nearly all the available games and watch almost all demos ever written for the C64. You can plug nearly every classic hardware cartridge ever made for the C64 into the MEGA65's expansion port and enjoy working/playing with it and you can work with any IEC device (retro devices such as original 1541 or 1581 drives, printers, plotters and modern devices such as the SD2IEC).
+Our Release 5.2 is a mature release. Thanks to all the folks who [contributed](https://github.com/MJoergen/C64MEGA65/blob/master/AUTHORS) to the Core, it is incredibly compatible to an original PAL Commodore 64. With our Release 5.2 you can play nearly all the available games and watch almost all demos ever written for the C64. You can plug nearly every classic hardware cartridge ever made for the C64 into the MEGA65's expansion port and enjoy working/playing with it and you can work with any IEC device (retro devices such as original 1541 or 1581 drives, printers, plotters and modern devices such as the SD2IEC).
 
 Yet, at this moment, our MEGA65 version of the MiSTer core is still **missing**
 some nice features such as:
 
--- Use the MEGA65's physical drive as a C1581
+* Use the MEGA65's physical drive as a C1581
 
--- NTSC mode (different timings for CPU and VIC-II)
+* NTSC mode (different timings for CPU and VIC-II)
 
--- Mounting tape images from SD Card (`.tap`)
+* Mounting tape images from SD Card (`.tap`)
 
--- Mounting D81 disk images (`.d81`)
+* Mounting D81 disk images (`.d81`)
 
--- Mounting G64 disk images (`.g64`)
+* Mounting G64 disk images (`.g64`)
 
--- Formatting disk images (`.d64` and `.g64`)
-
--- Supporting MiSTer's GCR-level disk manipulation
+* Formatting disk images (`.d64` and `.g64`)
 
 And there is much more. Have a look at our [Roadmap](https://github.com/MJoergen/C64MEGA65/blob/master/ROADMAP.md) to learn what we plan to do in future.
+
+**Please do not expect a Core update in 2025.**

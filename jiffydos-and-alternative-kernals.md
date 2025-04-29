@@ -33,7 +33,7 @@ You can buy additional ROMs for real hardware drives that you own. As the C64 Co
 When you bought the ROMs, you received ZIP files. Unpack the ZIP files and get the `.bin` files from these.
 
 The C64 for MEGA65 core needs two files to run JiffyDOS and each of them needs
-to be exactly `16 kB = 16,384 bytes` in size. One file is the C64 Kernal+Basic ROM
+to be exactly 16384 bytes in size. One file is the C64 Kernal+Basic ROM
 `jd-c64.bin` and one file is the 1541 DOS ROM `jd-c1541.bin`. Perform the
 following steps to create these files from the `*.bin` files you purchased.
 
@@ -58,16 +58,14 @@ cat basic.901226-01.bin JiffyDOS_C64_6.01.bin > jd-c64.bin
 The following command assumes that you are in a folder that contains the
 following two files: `JiffyDOS_C64_6.01.bin` and `basic.901226-01.bin`.
 
-```cmd
-copy /b basic.901226-01.bin+JiffyDOS_C64_6.01.bin jd-c64.bin
-```
+**`cmd /c copy /b basic.901226-01.bin+JiffyDOS_C64_6.01.bin jd-c64.bin`**
 
-Hint: Do not omit the `/b` (for binary) in the copy command above.
+Hint: Do not omit the `/b` (for binary) in the copy command above. The `/c` parameter is needed if you are using Powershell rather than the classic command prompt (but won't hurt there).
 
 ### C1541 DOS ROM: `jd-c1541.bin`
 
 The JiffyDOS download package contains two `*.bin` files. Take the one that
-is exactly `16 kB = 16,384 bytes` in size and rename it to `jd-c1541.bin`.
+is exactly 16,384 bytes in size and rename it to `jd-c1541.bin`.
 
 ## Install JiffyDOS for the C64 Core
 
@@ -83,7 +81,7 @@ If you want the core to remember that you seleced JiffyDOS next time you start t
 
 While the Core officially has no function to install other Kernal ROMs, there is no check whether the JiffyDOS-Kernal actually is JiffyDOS. If you want to install your own kernal you can name any 16KB Basic+Kernal ROM `jd-c64.bin` and any 16KB 1541 ROM `jd-c1541.bin` and they are activated if you select JiffyDOS in the Core menu. Just make sure you have installed both files, even if you only want to replace the C64 Kernal, you need to supply the standard 1541 ROMs then.
 
-For example we have successfully tested **JaffyDOS**, a modified JiffyDOS Kernal. There is no reason why other Kernals should not work, but they are not tested. JaffyDOS can be found with your favourite Internet Search Engine.
+For example we have successfully tested **JaffyDOS**, a modified JiffyDOS Kernal. There is no reason why other Kernals should not work, but they are not tested. JaffyDOS can be found with your favourite Internet Search Engine. We do not recommend the *Jiffy Dolphin SD2IEC Patch* Kernel as that one has been shown to have errors (drops data reads) in some cases.
 
 Pro Tip: You can have different Kernels on different Micro SD Cards if for whatever reason you need to try more than one custom Kernal.
 

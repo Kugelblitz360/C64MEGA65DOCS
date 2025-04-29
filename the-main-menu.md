@@ -46,16 +46,16 @@ This menu allows you to switch the ROMs inside the C64 core to one of four diffe
 Changing the Kernal will reset the C64. 
 ## Display Settings
 ### HDMI: (Resolution)
-In this menu you can choose one of the supported resolutions and more of the HDMI output. Please see the full section on videomodes [here](vga-and-hdmi-output.html). It contains important compatibility info, so please have a read.
+In this menu you can choose one of the supported resolutions and more of the HDMI output. Please see the full section on videomodes [here](hdmi-and-analog-output.html). It contains important compatibility info, so please have a read.
 ### HDMI: CRT emulation
 This turns on a basic emulation of the scanline look and fuzzy picture of a C64 back in the Eighties. It's actually recommended to keep this on. When off, you do get extremely sharp pixels, but there are aliasing artifacts that make it look like some pixels are thinner than others. Compare these two images, without and with CRT emulation:
 
 <img src="nocrt.png"> <img src="withcrt.png">
 
 ### HDMI: Zoom-in
-This option slightly zooms into the picture in some of the videomodes. Please find out more [here](vga-and-hdmi-output.html).
+This option slightly zooms into the picture in some of the videomodes. Please find out more [here](hdmi-and-analog-output.html).
 ### VGA: Standard
-This option switches between different VGA output modes. The standard mode should work with every current VGA monitor, but if you have a good old (heavy and deep) CRT you can go full retro here. Please find out more [here](vga-and-hdmi-output.html).
+This option switches between different VGA output modes. The standard mode should work with every current VGA monitor, but if you have a good old (heavy and deep) CRT you can go full retro here. Please find out more [here](hdmi-and-analog-output.html).
 ### OSM: 100%
 If you have switched to a video mode that makes the menu too large for your screen, you can make it smaller here. This is not very sophisticated, but works. This might be changed in a later version of the Core.
 ## About & Help

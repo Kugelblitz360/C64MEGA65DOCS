@@ -3,6 +3,8 @@ This page contains questions and answers that have been brought up by users of t
 ## Top Issues
 Well, there really is no real ranking of questions repeated over and over yet, but these here have been asked more often than others or simply feel important. We tried to group similar issues in the full list so this just links to the full answers below.
 
+**Barcode like display** - please see [here](#unsual-picture-after-a-reset-barcode)
+
 **SD Card file corruption** - please see [here](#important-information-about-micro-sd-cards) and if you have an R3 machine [here](#unexplainable-general-weird-behaviour)
 
 **No picture on HDMI** - please see [here](#no-picture-on-a-connected-hdmi-display)
@@ -10,8 +12,6 @@ Well, there really is no real ranking of questions repeated over and over yet, b
 **Cartridge/Hardware does not work** - please see [here](#i-can-not-run-a-specific-cartridgeextension) and [here](#the-core-does-not-work-when-a-cartridge-is-inserted)
 
 **Keyboard does not work** - please see [here](#the-keyboard-is-not-working)
-
-**Barcode like display** - please see [here](#unsual-picture-after-a-reset-barcode)
 
 **My game progress is gone after reboot** - please see [here](#i-saved-a-game-but-when-i-reboot-it-is-gone)
 
@@ -22,26 +22,20 @@ There are several different version of the MEGA65 and the differences are explai
 
 ## Video Issues
 #### No picture on a connected HDMI display
-Please check [here](vga-and-hdmi-output.html#hdmi-troubleshooting).
+Please check [here](hdmi-and-analog-output#hdmi-troubleshooting).
 
 #### Strange picture on a VGA display
-Please try the  ``Auto Adjust`` function or similar on your VGA display, and make sure that you have turned off [HDMI Flicker-Free](vga-and-hdmi-output.html#the-hdmi-flicker-free-option).
+Please try the  ``Auto Adjust`` function or similar on your VGA display, and make sure that you have turned off [HDMI Flicker-Free](hdmi-and-analog-output#the-hdmi-flicker-free-option).
 
-If you are using a flat screen rather than a bulky CRT, please do not use the 15 KHz modes, but if you have a bulky CRT, please try the [15 KHz mode](vga-and-hdmi-output.html#retro-15-khz-for-cathode-ray-tubes).
+If you are using a flat screen rather than a bulky CRT, please do not use the 15 KHz modes, but if you have a bulky CRT, please try the [15 KHz mode](hdmi-and-analog-output#retro-15-khz-for-cathode-ray-tubes).
 
 #### Unsual picture after a reset ("barcode")
-A small but significant number of users have reported a problem with the C64 Core only showing vertical bars after a reset or irregularly after a number of minutes. It looks like this:
+Some users have reported a problem with the C64 Core only showing vertical bars after a reset or irregularly after a number of minutes. It looks like this:
 
 <img src="barcode1.webp" style="width:200px">
 <img src="barcode2.webp" style="width:200px">
 
-This behaviour is limited to R6 boards and is a very specific timing issue with the so-called "HyperRAM" component of the MEGA65. There is a temporary fix available in form of a new Alpha version of the Core. The only change is regarding this specific behaviour, but it can not be ruled out that the fix has negative side effects. If you want to install this version of the Core, please click the following link to download the installation files and follow the usual procedures:
-
-https://t.ly/ujcev
-
-You can also install the released version of the Core and this specific fixed alpha version in different slots of the MEGA65 for comparison.
-
-**Do not install this version of the Core unless you repeatedly see those vertical bars.**
+This has been fixed in the Core version 5.2. Please update your Core.
 
 
 ## Loading and Running Games
@@ -76,11 +70,15 @@ Please check the following list of potential solutions:
 * Do you have additional devices on the IEC bus? Some programs refuse to run if they see a device ``#9``, ``#10`` and so on. Try switching off the IEC bus in the menu.
 * Some programs (even some cartridges) refuse to run or crash when [JiffyDOS](jiffydos-and-alternative-kernals.html) is active, switch to the [standard Kernal](the-main-menu.html#kernal-standard).
 * Some copy-protected programs require a real 1541 drive or an exact 1541 emulation. Currently the Core does support a Pi1541-device on the IEC bus (and thinks it is a real 1541). Ultimate64 devices currently do not work. The 1541 emulation in the Core might be upgraded to a similar level of compatibility to these devices in the next version (end of 2025!).
+* A very small number of programs and demos does check the tape port, sometimes for copy protection purposes. As the Core uses the virtual tape port to integrate the Real Time Clock of the MEGA65, these programs can show strange behaviour. Unfortunately you can not turn off the clock feature in the Core yet - this is planned for a later version (most likely not in 2025).
 
 If you find some game or demo that still does not work, be so kind to create an issue in the official Github: https://github.com/MJoergen/C64MEGA65/issues
 
 #### A specific .prg file will not load correctly
-There are programming tricks in some ``.prg`` files that will simply not work with the fast direct load of the Core. Put the ``.prg`` file into a ``.d64``, mount the disk, and it should work.
+The loader for `.prg` files has been updated in Core version 5.2 to behave exactly like loading the file from device #8 (but a thousand times faster). This will break programs that rely on load from tape as a kind of copy protection.
+
+#### A specific physical game cartridge will not run
+There have been reports of some modern game cartridges having one defective chip inside. This was confirmed with a Zeta Wing cartridge from Protovision. After replacing the SN74HC02N chip the cartridge worked. If you have one specific cartridge that is not working, you can first check the current list of tested cartridges [here](https://github.com/MJoergen/C64MEGA65/blob/master/tests/carts.md) to see if it has been successfully tested. If it should, please contact the manufacturer or check [this discussion on Discord](https://discord.com/channels/719326990221574164/794775503818588200/1222651625475149834) for repair instructions.
 
 ## General Menu Usage
 
@@ -95,7 +93,7 @@ The <kbd>Restore</kbd> key of the C64 calls a "Non-Maskable Interrupt" which can
 Please also see the documentation about cartridges, especially [this section](c64-cartridges.html#freezer-cartridges).
 
 #### The file browser does not display all files
-First of all, the file browser will only display files with the currently appropriate extension, i.e. when mounting a disk, it will only show directories and ``.d64`` files. Also there is a limit of roughly 625 directory entries per directory, so putting for example all files from the OneLoad collection into one directory will not work. Try to keep a directory to a maximum of 300 files or subdirectories (you can nest directories very deep). Try creating directories for every first letter of the files or sort your games by genres or developers.
+First of all, the file browser will only display files with the currently appropriate extension, i.e. when mounting a disk, it will only show directories and `.d64` files. Also there is a limit of roughly 625 directory entries per directory, so putting for example all files from the OneLoad collection into one directory will not work. Try to keep a directory to a maximum of 300 files or subdirectories (you can nest directories very deep). Try creating directories for every first letter of the files or sort your games by genres or developers.
 
 #### The file browser does not react
 If you have many files in a directory, the file browser needs a few seconds to gather all information. Unfortunately you currently get no visual feedback that the file browser is working. Please wait a few seconds and also make sure that you do not have hundreds of files in a directory if you are in a hurry.
@@ -130,21 +128,21 @@ The C64 Core is incompatible with controllers designed for SEGA consoles, the CD
 ## Saving data
 
 #### I saved a game but when I reboot, it is gone
-Most likely you have used an Easyflash or Gmod version of a game mounted as a virtual cartridge, a ``.crt`` file. Unfortunately the Core does not write back the cartridge memory to the SD card when it is changes. You need to find a version of the game that saves games to a mounted `.d64` image (or a connected real drive). Also make sure that you created an image for saved games before starting the game, as the Core can not create empty disks for you. For your convenience you can download an empty disk image [here](empty.d64).
+Most likely you have used an Easyflash or Gmod version of a game mounted as a virtual cartridge, a `.crt` file. Unfortunately the Core does not write back the cartridge memory to the SD card when it is changes. You need to find a version of the game that saves games to a mounted `.d64` image (or a connected real drive). Also make sure that you created an image for saved games before starting the game, as the Core can not create empty disks for you. For your convenience you can download an empty disk image [here](empty.d64).
 
 #### I need to save something to an empty disk
-The C64 Core can not create or format disks. You need to have some spare empty ``.d64`` files on your SD Card. For your convenience you can download an empty disk image [here](empty.d64).
+The C64 Core can not create or format disks. You need to have some spare empty `.d64` files on your SD Card. For your convenience you can download an empty disk image [here](empty.d64).
 
 ## Disk drive issues
 
 #### I can not hear any drive sounds
-That is correct. The C64 Core does not have emulated drive sounds when a ``.d64`` is mounted
+That is correct. The C64 Core does not have emulated drive sounds when a `.d64` is mounted
 
 #### I can not format a .d64 file
-That is correct. While most commands that access the contents of a ``.d64`` file work, the format routine of the virtual 1541 does not. For your convenience you can download an empty disk image [here](empty.d64).
+That is correct. While most commands that access the contents of a `.d64` file work, the format routine of the virtual 1541 does not. For your convenience you can download an empty disk image [here](empty.d64).
 
 #### I can not open a specific .d64 file
-The C64 Core does not support ``.d64`` files that include error maps. Please see [here](working-with-disks-and-drives.html#supported-d64-variations).
+The C64 Core does not support `.d64` files that include error maps. Please see [here](working-with-disks-and-drives.html#supported-d64-variations).
 
 #### I can not access the 3.5 inch disk drive
 That is correct. The C64 Core does not access the internal disk drive of the MEGA65.
@@ -161,9 +159,6 @@ You might have to update the MEGA65 CORE #0. This issue is described [here](inst
 
 #### I can't connect to a network
 That is correct. The C64 Core does not use the Ethernet port. You need to be in MEGA65 mode for all network file transfers.
-
-#### Can I access the MEGA65 Realtime Clock from the C64 Core?
-Yes you can. The Core does emulate the **CP-Uhr F83**, a clock module that is plugged into the C64 tape port. In the current version of the Core it is always active. This is equivalent to the **Tape RTC (PCF8583)** device in the VICE emulator. Currently this clock module can not be switched off and has no user options. You can find additional info here: https://github.com/MJoergen/C64MEGA65/blob/master/doc/RTC.md
 
 #### SD2IEC / Pi1541 issues
 If you have errors with SD2IEC or Pi1541 devices, please check if they light up when you connect them to the MEGA65, but not their power supplies. If their LEDs light up faintly, these devices are not fully protected against the +5V of the IEC bus. We have seen data transfer problems with these devices and right now can only recommend replacing devices. More details can be found [here](working-with-disks-and-drives.html#sd2iec-and-pi1541).
@@ -183,12 +178,11 @@ For color nerds it might be an interesting additional info, that we actually imp
 
 https://www.pepto.de/projects/colorvic/
 
-#### Can the Core run GEOS?
-GEOS works very well on the MEGA65 using Version 5.1 of the core. AmokPhaze101 wrote a great step-by-step documentation:
+#### Can the Core use the Real Time Clock?
+Yes, the Core emulates the function of a `CP-Uhr F83` that would be connected to the tape port. In the current incarnation it is always on and delivers the time that is set in the MEGA65 configuration menu. Please find the relevant information in the MEGA65 user guide.
 
-1. Download GEOS [using this download link](https://github.com/MJoergen/C64MEGA65/raw/master/doc/assets/geos.zip)
-2. Work with AmokPhaze101's tutorial: [View and download PDF](https://github.com/MJoergen/C64MEGA65/blob/master/doc/GEOS_WITH_THE_C64_CORE.pdf)
-3. Learn how to use the [Real Time Clock](https://github.com/MJoergen/C64MEGA65/blob/master/doc/RTC.md)
+To automatically set the correct time in GEOS, please download the following disk image: https://github.com/MJoergen/C64MEGA65/raw/master/doc/assets/CP-ClockF83_1.3.D64.
+Then use a tool of your choice to copy the driver `CP-CLOCK-1.3.PRG` to your GEOS boot disk. 
 
 ## Important information about Micro SD Cards
 
@@ -200,9 +194,9 @@ Please make sure that your Micro SD Card has been formatted either by the MEGA65
 
 https://www.sdcard.org/downloads/formatter/
 
-The Operating System of your computer might offer to format ``FAT32`` but in reality you will get extra unwanted files, small other issues in the filesystem and in the end something that NOT follows official specifications. Also refrain from partitioning the Micro SD Card into several partitions.
+The Operating System of your computer might offer to format `FAT32` but in reality you will get extra unwanted files, small other issues in the filesystem and in the end something that NOT follows official specifications. Also refrain from partitioning the Micro SD Card into several partitions.
 
-Please immediately after formatting the card create a directory called ``c64`` and copy the Config File called ``c64mega65`` into it. It needs to be the version that came with the installed version of the Core, _it needs to be exactly the correct size!_
+Please immediately after formatting the card create a directory called `c64` and copy the Config File called `c64mega65` into it. It needs to be the version that came with the installed version of the Core, _it needs to be exactly the correct size!_
 
 Please use a good brand-name card like Samsung, Verbatim or SanDisk. They are really cheap these days anyway.
 

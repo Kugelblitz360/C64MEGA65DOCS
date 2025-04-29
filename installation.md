@@ -42,10 +42,10 @@ There are subtle but important differences between the different revisions of th
 | MEGA65 model   |   Years   | File name             | Comment
 |:--------------:|:---------:|:---------------------:|-------------------------
 | R2             | 2019-2020 | &lt;none&gt;          | R2 is a very rare pre-series model, only 20 of them were built. The C64 for MEGA65 core does not run on R2 machines.
-| R3/R3A         | 2020-2023 | C64MEGA65-V5.1-R3.cor | R3 is the "DevKit" (100 were built) and R3A are batches 1 and 2. If your MEGA65 was manufactured before 2024 then you have an R3 or R3A machine.
-| R4             | 2023      | C64MEGA65-V5.1-R4.cor | Development board on our way to the R6. Only 10 of them were manufactured (board only, no complete machines).
-| R5             | 2023      | C64MEGA65-V5.1-R5.cor | Upgraded version of R4 that contains new circuits for the expansion port. Only 10 of them were manufactured (board only, no complete machines).
-| R6             | 2024+     | C64MEGA65-V5.1-R6.cor | Latest and greatest MEGA65. Manufactured from 2024 on.
+| R3/R3A         | 2020-2023 | C64MEGA65-V5.2-R3.cor | R3 is the "DevKit" (100 were built) and R3A are batches 1 and 2. If your MEGA65 was manufactured before 2024 then you have an R3 or R3A machine.
+| R4             | 2023      | C64MEGA65-V5.2-R4.cor | Development board on our way to the R6. Only 10 of them were manufactured (board only, no complete machines).
+| R5             | 2023      | C64MEGA65-V5.2-R5.cor | Upgraded version of R4 that contains new circuits for the expansion port. Only 10 of them were manufactured (board only, no complete machines).
+| R6             | 2024+     | C64MEGA65-V5.2-R6.cor | Latest and greatest MEGA65. Manufactured from 2024 on.
 
 ### Differences in the C64 Core operation
 
