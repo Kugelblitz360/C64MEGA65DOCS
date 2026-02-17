@@ -10,6 +10,7 @@ A majority of C64 cartridges works with the C64 Core on MEGA65 - both as physica
 
 [TeensyROM special instructions](#teensyrom)
 
+[IDE64 special instructions](#ide64)
 
 The MEGA65 will autostart the C64 core when a C64 cartridge is inserted before turning on the MEGA65. This behaviour can be turned off. Please check the MEGA65 documentation for this as it is not a function of the C64 core.
 
@@ -268,7 +269,11 @@ To install this firmware with only a MEGA65 you can to follow these steps:
 * Power it back on, start the C64 core, turn on "Use Hardware Slot" if needed.
 * When TeensyROM is active, check that the flash has worked by pressing <kbd>Shift</kbd> and <kbd>F7</kbd> and then <kbd>k</kbd> to run a self-test.
 
+#### Limitations
+
 TeensyROM disables itself when it has started a `.prg` or `.crt` file and will not reappear when you use the Reset-Button on the MEGA65. To reactivate, use the button on the TeensyROM cartridge. **It can take about two seconds for the TeensyROM menu to show up** - this is normal behaviour as the TeensyROM reinitialises itself, then resets the C64.
+
+TeensyROM Firmware 0.6.7 and above have a feature to support EasyFlash images larger than ~850 KB by swapping banks from the SD card to the TeensyROM. During those swaps the TeensyROM will use the DMA-line to stop the CPU for a moment. **This is not supported by the current version of the Core, so you are limited to EasyFlash images smaller than ~850 KB.**
 
 ### GeoRAM
 
@@ -282,6 +287,22 @@ GeoRAM cartridges work. Make sure that you use a GEOS boot disk with support for
 You can not use physical REU cartridges with the Core on the MEGA65.
 
 You can activate a virtual REU 1750 in the menu. This deactivates the physical cartridge slot and the simulated cartride, so the virtual REU 1750 can not be combined with any other cartridge.
+
+### MSSIAH (and other "long init" cartridges)
+
+There is a group of cartridges, for example [MSSIAH](https://mssiah.com/), that is a small computer in itself which initialises when getting power. These carts can have two major limitations:
+
+* They will not work on R3 machines, as these are missing some bi-directional lines on the cartridge port.
+* They will not be autodetected when you power on the MEGA65. You either need to manually start the C64 Core or make the C64 Core the default core even when no cartridge is inserted. Instructions for this are in the MEGA65 documentation.
+
+### IDE64
+
+The IDE64 is not compatible with the current public release. If you want to try out an *unsupported* Alpha version, you can install an alpha version of the 6.0 build of the C64 Core which can be found [here.](alphasix.html)
+
+If you find any problems or bugs, please be so kind and document them with an issue on the Github:
+
+https://github.com/MJoergen/C64MEGA65/issues 
+
 
 ### Other Cartridges tested and working
 
@@ -300,14 +321,14 @@ With the clear exception of buttons not working fully on R3 machines (see above)
 
 The following cartridges have not been tested and should be considered **NOT WORKING**.
 
-* **Sidekick64** - currently unsupported but expected to work with the next Core revision. (Uses the DMA-line to halt the CPU during Init, which is not yet implemented).
+* **Sidekick64** - currently unsupported but expected to work with the next major Core revision. (Uses the DMA-line to halt the CPU during Init, which is not yet implemented).
 
 * **Chat64** - there are reports that this cartridige once supposedly has worked with a beta version of the Core, but not with any of the release versions, especially the current 5.2 release. The dev team currently has no such cartridge and can not troubleshoot.
 
 * **1541 Ultimate-II and variations** - these do not work due to the Kernal Replacement functions that are currently imcompatible with the 5.1 Core, and both the DMA-line and the REU functionality incompatible with the 5.1 Core.
 *It has been reported that you can use the 1541-emulation by not inserting the cartridge itself, power the U-II by USB, connect with an IEC cable and then use a computer with Telnet to remote control the U-II via Ethernet. Please refer to the 1541 Ultimate-II documentation for details.*
 
-* **CMD RAM-Link, IEEE-488, Magic Voice, MMC64, IDE64** - these cartridges expand the C64 with further storage options or speech output and are currently not supported. For IDE64 a fix should be coming in the next Core version (no release date yet), others that use DMA functions might take even longer.
+* **CMD RAM-Link, IEEE-488, Magic Voice** - these cartridges expand the C64 with further storage options or speech output and are currently not supported.
 
 * **Expert Cartridge** - this freezer is untested and unsupported.
 

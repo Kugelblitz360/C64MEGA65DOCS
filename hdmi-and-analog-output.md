@@ -9,10 +9,9 @@ You can use both modes in parallel. The C64 core always outputs on both options.
 ### About Frame Rate and stuttering
 The original PAL C64 outputs 50.125 interlaced frames per second. Unfortunately HDMI monitors run at exactly 50 frames per second and sometimes only at 60 frames per second. The Core can deal with all these situations, but you will get visible artifacts (stuttering) or a tiny bit of incompatibility.
 
-* If your monitor can process AND display 50.125 frames per second, you get the full real experience. This is highly unlikely though.
-* If your monitor can process 50.125 frames per second but only displays 50 frames per second, you will see a tiny "stutter" approx. every 2, 4 or 8 seconds (depending on the internal frame processing of interlaced images). You can remove this stutter with the "HDMI Flicker Free" option, which will slow down the full Core by a tiny amount so that the output is exactly 50 frames per second.
-* If your monitor can process 50.125 or 50 frames per second but can only display at 60 frames per second, the monitor will add a "stutter" every 10th of a second. Yes, that is ten stutters per second. Depending on the internal electronics, it might be better to switch the Core into a 60 Hz output mode.
-* If your monitor can only process 60 frames per second you have no other choice but to put the Core into 60 Hz output mode.
+* If your monitor can display 50 Hz (PAL), you will only see a tiny "stutter" every 2 or 4 seconds (depending on the internal video logic). You can remove that stutter with the Flicker-Free option described below.
+* If your monitor can process 50 frames per second but can only display at 60 frames per second, the monitor might add a "stutter" every 10th of a second. Yes, that is ten stutters per second. Depending on the internal electronics, it might be better to switch the Core into a 60 Hz output mode. Some monitors compensate mid-frame, so you'd see scrolling "break" in the middle of the screen. In that case you might to put the Core into 60 Hu output to test wheter that looks better.
+* If your monitor can only process 60 frames per second you have no other choice but to put the Core into 60 Hz output mode - otherwise you get just a black screen.
 
 There are two methods to check out your monitors capability.
 * The game "Great Giana Sisters" has a perfect constant 50 frames per second scroll in the title screen. Just watch whether the letters move smoothly or whether you see the tiny stutter every few seconds.
@@ -22,7 +21,7 @@ https://csdb.dk/release/?id=198494
 Reminder: The current version of the Core does not support the NTSC models of the C64 which would output nearly (!) 60 interlaced frames per second, adding to the complexity here.
 
 ### The HDMI Flicker-Free option
-When you turn on the "HDMI Flicker-Free" option, the whole system interally is slowed down a tiny bit. The CPU, the emulated disc drive, everything "inside" the MEGA65 is running slightly slower. The video output is now 50 fps instead of 50.125 fps and so the output is smoother. Even though your C64 is now only running at 99.75% of its real speed, you should not notice any difference but in two cases:
+When you turn on the "HDMI Flicker-Free" option, the whole system interally is slowed down a tiny bit. The CPU, the emulated disc drive, everything "inside" the MEGA65 is running slightly slower. The video output is now 50 fps instead of 50.125 fps and so the output is perfectly smooth on HDMI. Even though your C64 is now only running at 99.75% of its real speed, you should not notice any difference but in two cases:
 * You have external hardware connected to either the cartridge port or the IEC bus that is extremly timing intolerant. This can include some copy protection schemes that are counting every processor cycle, but your external 1541 now runs "too fast" for the C64. Because of the tiny speed difference, this should happen only in extreme cases.
 * If you have perfect pitch hearing, you might notice a difference with some sounds. Depending on how music is programmed (especially with digitized effects), it is now shifted slighty lower and some (!) people can actually hear that. Most of us can't.
 
@@ -41,7 +40,7 @@ The first four options of the HDMI menu give you two fixed resolutions with diff
 * **4:3 576p 50 Hz** This configuration is very compatible with HDMI monitors but they might stretch the picture to 16:9 on their own - you would need to switch this off on your monitor, not the Core. Because the output can just double the lines instead of oddly upscaling to 720 lines, the vertical resolution is much cleaner.
 * **5:4 576p 50 Hz** This resolution might not compatible with your HDMI display, but if it is it usually gives you the most realistic picture. The aspect ratio is the one the original C64 would display on an "old" TV. Also for people documenting games for videos, this resolution gives the most realistic look for framegrabbers. Most screenshots in this documentation were done in this mode with a cheap USB3 framegrabber.
 
-Every monitor is different. You can switch between modes on the fly to see what gives you the best picture. For example, on some monitors the 4:3 resolution is unstretched and the 5:4 is and on others it just works the opposite way.
+Every monitor is different. You can switch between modes on the fly to see what gives you the best picture. For example, on some monitors the 4:3 resolution is unstretched and the 5:4 is stretched and on others it just works the opposite way.
 
 ### Black border
 
@@ -52,7 +51,7 @@ In 720p modes, there is a black box to display a correct aspect ratio by centeri
 To minimize that black box you can select the [Zoom In](the-main-menu.html#hdmi-zoom-in) option in the main menu.
 
 ### HDMI : Flicker-free
-Please see the complete explanation [above](vga-and-hdmi-output.html#the-hdmi-flicker-free-option). You can turn this on and off without rebooting.
+Please see the complete explanation [above](hdmi-and-analog-output.html#the-hdmi-flicker-free-option). You can turn this on and off without rebooting.
 
 ### HDMI: DVI (no sound)
 This is a compatibility setting for some monitors that will not process the Core´s HDMI output when it also contains an audio signal. This will turn off audio output on HDMI. You will then need to connect speakers to the audio output jack of the MEGA65. There is no benefit to turn this on if your monitor works fine without this option.

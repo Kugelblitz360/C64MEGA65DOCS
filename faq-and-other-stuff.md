@@ -25,7 +25,7 @@ There are several different version of the MEGA65 and the differences are explai
 Please check [here](hdmi-and-analog-output#hdmi-troubleshooting).
 
 #### Strange picture on a VGA display
-Please try the  ``Auto Adjust`` function or similar on your VGA display, and make sure that you have turned off [HDMI Flicker-Free](hdmi-and-analog-output#the-hdmi-flicker-free-option).
+Please try the  ``Auto Adjust`` function or similar on your VGA display, and make sure that you have turned **off** [HDMI Flicker-Free](hdmi-and-analog-output#the-hdmi-flicker-free-option).
 
 If you are using a flat screen rather than a bulky CRT, please do not use the 15 KHz modes, but if you have a bulky CRT, please try the [15 KHz mode](hdmi-and-analog-output#retro-15-khz-for-cathode-ray-tubes).
 
@@ -70,7 +70,7 @@ Please check the following list of potential solutions:
 * Do you have additional devices on the IEC bus? Some programs refuse to run if they see a device ``#9``, ``#10`` and so on. Try switching off the IEC bus in the menu.
 * Some programs (even some cartridges) refuse to run or crash when [JiffyDOS](jiffydos-and-alternative-kernals.html) is active, switch to the [standard Kernal](the-main-menu.html#kernal-standard).
 * Some copy-protected programs require a real 1541 drive or an exact 1541 emulation. Currently the Core does support a Pi1541-device on the IEC bus (and thinks it is a real 1541). Ultimate64 devices currently do not work. The 1541 emulation in the Core might be upgraded to a similar level of compatibility to these devices in the next version (end of 2025!).
-* A very small number of programs and demos does check the tape port, sometimes for copy protection purposes. As the Core uses the virtual tape port to integrate the Real Time Clock of the MEGA65, these programs can show strange behaviour. Unfortunately you can not turn off the clock feature in the Core yet - this is planned for a later version (most likely not in 2025).
+* A very small number of programs (inclusing the late 2025 release "Jupiter Fracture") and demos does check the tape port, sometimes for copy protection purposes. As the Core uses the virtual tape port to integrate the Real Time Clock of the MEGA65, these programs can show strange behaviour. Unfortunately you can not turn off the clock feature in the Core yet - this is planned for a later version (most likely not in 2025). You can download an untested Core version [here.](alphasix.html)
 
 If you find some game or demo that still does not work, be so kind to create an issue in the official Github: https://github.com/MJoergen/C64MEGA65/issues
 

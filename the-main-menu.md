@@ -22,7 +22,7 @@ Please make sure that no physical or virtual cartridge is plugged in when you us
 ### Use Hardware Slot
 You need to turn on this option to use a physical cartridge plugged into the cartridge port of the MEGA65. If it is turned on, all other options for the Expansion Port are turned off. There is a lot of information about cartridges [here](c64-cartridges.html).
 ### Simulate 1750 REU 512KB
-This adds a virtual RAM expansion to your C64 Core. This should only be turned on if a specific program requires it. You can not use a physical 1750 REU. If the virtual 1750 REU is active, neither the cartridge port nor a virtual cartridge can be used.
+This adds a virtual RAM expansion to your C64 Core. This should only be turned on if a specific program requires it. You can not use a physical 1750 REU. If the virtual 1750 REU is active, neither the cartridge port nor a virtual cartridge can be used. Find more info [here.](the-1750-ram-expansion-unit.html)
 ### Simulate cartridge
 This toggle turns the currently loaded virtual cartridge on or off. It has no function when the Hardware Slot is turned on or the virtual 1750 REU is activated.
 ### CRT : < LOAD >
