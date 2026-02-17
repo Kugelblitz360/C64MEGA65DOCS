@@ -1,0 +1,73 @@
+<!DOCTYPE html><html lang="en-gb"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Work in Progress - C64 for MEGA65</title><meta name="description" content="Work has started on a 6.0 version of the C64 core. A release is planned for late 2026 or early 2027. This page gives you&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="stylesheet" href="https://kugelblitz360.github.io/C64MEGA65DOCS/media/plugins/staticSearch/static.search.min.css"><link rel="canonical" href="https://kugelblitz360.github.io/C64MEGA65DOCS/alphasix.html"><meta property="og:title" content="Work in Progress"><meta property="og:site_name" content="C64 for MEGA65"><meta property="og:description" content="Work has started on a 6.0 version of the C64 core. A release is planned for late 2026 or early 2027. This page gives you&hellip;"><meta property="og:url" content="https://kugelblitz360.github.io/C64MEGA65DOCS/alphasix.html"><meta property="og:type" content="article"><link rel="stylesheet" href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/css/style.css?v=dc45f6946dcfc079f3d637d2c1cf213a"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://kugelblitz360.github.io/C64MEGA65DOCS/alphasix.html"},"headline":"Work in Progress","datePublished":"2026-02-17T15:16+01:00","dateModified":"2026-02-17T15:37+01:00","description":"Work has started on a 6.0 version of the C64 core. A release is planned for late 2026 or early 2027. This page gives you&hellip;","author":{"@type":"Person","name":"Boris Schneider-Johne","url":"https://kugelblitz360.github.io/C64MEGA65DOCS/authors/boris-schneider-johne/"},"publisher":{"@type":"Organization","name":"Boris Schneider-Johne"}}</script><noscript><style>img[loading] {
+                    opacity: 1;
+                }</style></noscript></head><body class="post-template"><header class="top"><div class="top__logo"><a class="logo" href="https://kugelblitz360.github.io/C64MEGA65DOCS/">C64 for MEGA65</a></div><div class="top__search search"><div class="search__overlay js-search-overlay"><div class="search__overlay-inner"><svg class="search__icon" role="presentation" height="22" width="22"><use xlink:href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/svg/svg-map.svg#search"/></svg><form action="#search" class="search__form"><input class="search__input" type="search" placeholder="Search" aria-label="Search"></form><button class="search__close js-search-close" aria-label="Close">Close</button></div></div><button class="search__trigger js-search-btn" aria-label="Search"><span>Search</span> <svg role="presentation" focusable="false" height="22" width="22"><use xlink:href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/svg/svg-map.svg#search"/></svg></button></div><div class="top__links"><a href="https://github.com/MJoergen/C64MEGA65" class="top__links-url" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener"><svg height="24" width="24"><use xlink:href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/svg/svg-map.svg#github"></use></svg> </a><a href="https://discord.com/channels/719326990221574164/794775503818588200" class="top__links-url" aria-label="Discord" title="Discord" target="_blank" rel="noopener"><svg height="24" width="24"><use xlink:href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/svg/svg-map.svg#discord"></use></svg> </a><a href="https://youtu.be/n3ke0alwjds?si&#x3D;RT6c1nxfgn12dWsv" class="top__links-url" aria-label="YouTube" title="YouTube" target="_blank" rel="noopener"><svg height="24" width="24"><use xlink:href="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/svg/svg-map.svg#youtubeColor"></use></svg></a></div><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button></header><main class="main post"><div class="main__left"><div class="main__left-inner"><div class="main__left-content"><article class="content"><header><h1 class="content__title">Work in Progress</h1></header><div class="content__entry"><p>Work has started on a 6.0 version of the C64 core. A release is planned for late 2026 or early 2027. This page gives you an overview on new features as well as download links for <strong>untested</strong> Alpha versions.</p><h2 id="download-location">Download location</h2><p>The current Alpha 1 version can only be downloaded in the Discord Channel:</p><p><a href="https://discord.com/channels/719326990221574164/794775503818588200/1472615052065505464">https://discord.com/channels/719326990221574164/794775503818588200/1472615052065505464</a></p><h2 id="ide64-support">IDE64 Support</h2><p>The IDE64 cartridge is supported by the current Alpha version of the Core. There is no IDE64-simulation, you need an actual interface cartridge. This is still experimental - we need data whether this fully works from users.</p><h2 id="rtc-disable">RTC disable</h2><p>The current release of the 5.2 core emulates a Real Time Clock connected to the C64 tape port, mainly to run with GEOS. Unfortunately a very limited number of programs will crash when this clock is active. The current 6.0 Alpha turns the clock off again, so these programs will run, but you will lose the RTC functionality. Later versions will make the clock switchable in the User Interface.</p><p>More details about the RTC can be found <a href="https://github.com/MJoergen/C64MEGA65/blob/master/doc/RTC.md">here.</a></p><h2 id="other-features-planned">Other features planned</h2><p>To see a list of features that are planned, please check out the list of issues labeled “V6” in the Github of the C64 Core. You can directly access this list <a href="https://github.com/MJoergen/C64MEGA65/issues?q=is%3Aissue%20state%3Aopen%20label%3AV6">here.</a> This is not a guarantee that these features will be implemented, everything is under evaluation.</p></div><footer><div class="content__footer-top"><div class="content__meta"><time datetime="2026-02-17T15:16">Tuesday, 17 February 2026 </time><span>Updated on: <time datetime="2026-02-17T15:37">Tuesday, 17 February 2026</time></span></div></div></footer></article></div><aside class="main__left-aside"><div class="main__left-aside__inner"><h3>On this page</h3><nav class="aside-toc" id="aside-toc"></nav></div></aside></div></div><div class="main__right"><div class="main__right-inner"><nav class="navbar"><ul class="navbar__menu"><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/" target="_self">Start Page</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/features.html" target="_self">Overview of Features</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/faq-and-other-stuff.html" target="_self">Troubleshooting and FAQ</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/installation.html" target="_self">MEGA65 Revisions and Installation</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/the-main-menu.html" target="_self">The Main Menu</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/working-with-the-file-browser.html" target="_self">The File Browser</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/go64-vs-c64-core.html" target="_self">GO64 vs. C64 Core</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/hdmi-and-analog-output.html" target="_self">HDMI and Analog (VGA) Output</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/audio-output-and-sid.html" target="_self">Audio output and SID</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/joysticks-paddles-mice.html" target="_self">Joysticks and other controllers</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/working-with-disks-and-drives.html" target="_self">Working with disks and drives</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/saving-data-with-the-c64-core.html" target="_self">Saving data with the C64 Core</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/c64-cartridges.html" target="_self">C64 Cartridges</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/the-1750-ram-expansion-unit.html" target="_self">The 1750 RAM Expansion Unit</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/jiffydos-and-alternative-kernals.html" target="_self">JiffyDOS and alternative Kernals</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/geos-on-the-mega65-c64-core.html" target="_self">Running GEOS</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/resetting-the-core.html" target="_self">Resetting the Core</a></li><li><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/testing.html" target="_self">Testing the Core for Release</a></li><li class="active"><a href="https://kugelblitz360.github.io/C64MEGA65DOCS/alphasix.html" target="_self">Future versions and Roadmap</a></li></ul></nav><div class="footer main__right-footer"><div class="footer__copy">Created with Publii and ProDocs by Boris Schneider-Johne</div></div></div></div></main><footer class="footer"><div class="footer__wrap"><div class="footer__inner"><div class="footer__copy">Created with Publii and ProDocs by Boris Schneider-Johne</div></div></div></footer><div class="content__progress" id="js-content__progress" aria-hidden="true"></div><script>window.publiiThemeMenuConfig = {    
+        mobileMenuMode: 'sidebar',        
+        submenuWidth: 300,        
+        mobileMenuExpandableSubmenus: true,
+        isHoverMenu: false,
+        ariaButtonAttribute: 'aria-expanded',
+   };</script><script src="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/js/html-contents.min.js?v=169077c370ab8ca62b029845f80f7fd5" defer="defer"></script><script>document.addEventListener("DOMContentLoaded", function(event) {
+            htmlContents('#aside-toc', {
+                area: '.content__entry',
+                top: 2,
+                bottom: 3,
+                listType: 'o',
+                filter: function(arr) {
+                    return !arr.matches('.noOutline')
+                },
+                addIds: true,
+                addLinks: true
+            });
+
+            setTimeout(function() {
+                handleActiveClass('#aside-toc');
+            }, 0);
+        })</script><script defer="defer" src="https://kugelblitz360.github.io/C64MEGA65DOCS/assets/js/scripts.min.js?v=4fce2b30433039b19e7a444fe8ab80b7"></script><script>var images = document.querySelectorAll('img[loading]');
+
+        for (var i = 0; i < images.length; i++) {
+            if (images[i].complete) {
+                images[i].classList.add('is-loaded');
+            } else {
+                images[i].addEventListener('load', function () {
+                    this.classList.add('is-loaded');
+                }, false);
+            }
+        }</script><script>window.publiiStaticSearchConfig = { 
+					baseURL: 'https://kugelblitz360.github.io/C64MEGA65DOCS',
+					indexChecksum: 'ccdbec6909c208b14c35863d9835e113',
+					minCharCount: 3,
+					maxResultsCount: 20,
+					showPopupOnInputClick: false,
+					customTriggerSelector: '',
+					engineSettings: {
+						tokenize: 'full',
+						charset: 'latin:extra',
+						language: 'en-US',
+						cache: false,
+						suggest: false
+					},
+					indexSettings: {
+						resultsDescription: 'off',
+						indexPostTitles: true,
+						indexPostExcerpts: true,
+						indexPostHeadings: true,
+						indexPostAuthors: false,
+						indexPostMetaDescription: true,
+						indexPageTitles: true,
+						indexPageExcerpts: true,
+						indexPageHeadings: true,
+						indexPageMetaDescription: true,
+						indexTagNames: true,
+						indexTagDescription: true,
+						indexTagMetaDescription: true,
+						indexPostConfig: false,
+						indexPageConfig: false
+					},
+					translations: {
+						inputPlaceholder: 'Search...',
+						searchEmptyState: 'Type to start a search',
+						tooShortPhraseState: 'Enter at least 3 characters to search...',
+						noResults: 'No results found!',
+						buttonClose: 'Close'
+					}
+				};</script><script src="https://kugelblitz360.github.io/C64MEGA65DOCS/media/plugins/staticSearch/flexsearch.bundle.js"></script><script src="https://kugelblitz360.github.io/C64MEGA65DOCS/media/plugins/staticSearch/static.search.min.js"></script></body></html>
