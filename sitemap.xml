@@ -6,7 +6,7 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/alphasix.html</loc>
-<lastmod>2026-11-19T22:50:07+01:00</lastmod>
+<lastmod>2026-11-23T10:46:42+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/audio-output-and-sid.html</loc>
@@ -14,7 +14,7 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/c64-cartridges.html</loc>
-<lastmod>2026-02-17T15:28:16+01:00</lastmod>
+<lastmod>2026-11-23T10:21:39+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/faq-and-other-stuff.html</loc>
@@ -30,7 +30,7 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/geos-on-the-mega65-c64-core.html</loc>
-<lastmod>2026-02-17T15:22:27+01:00</lastmod>
+<lastmod>2026-11-23T01:19:57+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/go64-vs-c64-core.html</loc>
@@ -38,7 +38,7 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/hdmi-and-analog-output.html</loc>
-<lastmod>2026-02-17T15:22:14+01:00</lastmod>
+<lastmod>2026-11-23T10:26:14+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/installation.html</loc>
@@ -50,11 +50,11 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/joysticks-paddles-mice.html</loc>
-<lastmod>2025-04-28T14:16:23+02:00</lastmod>
+<lastmod>2026-11-23T10:48:45+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/keyboard-shortcuts-and-multidisks.html</loc>
-<lastmod>2026-11-19T22:48:06+01:00</lastmod>
+<lastmod>2026-11-23T10:09:02+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/resetting-the-core.html</loc>
@@ -62,7 +62,7 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/saving-data-with-the-c64-core.html</loc>
-<lastmod>2024-09-10T16:26:56+02:00</lastmod>
+<lastmod>2026-11-23T10:14:37+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/testing.html</loc>
@@ -78,7 +78,11 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/turbo-modes.html</loc>
-<lastmod>2026-11-19T22:48:13+01:00</lastmod>
+<lastmod>2026-11-23T01:13:31+01:00</lastmod>
+</url>
+<url>
+<loc>https://kugelblitz360.github.io/C64MEGA65DOCS/v6-video-modes.html</loc>
+<lastmod>2026-11-23T10:41:38+01:00</lastmod>
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/working-with-disks-and-drives.html</loc>
@@ -86,6 +90,6 @@
 </url>
 <url>
 <loc>https://kugelblitz360.github.io/C64MEGA65DOCS/working-with-the-file-browser.html</loc>
-<lastmod>2025-04-10T00:30:02+02:00</lastmod>
+<lastmod>2026-11-23T10:16:58+01:00</lastmod>
 </url>
 </urlset>
